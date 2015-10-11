@@ -44,7 +44,13 @@ section:nth-child(2n+1){
 	background-color: #6a9ace;
 }
 
+#hiddenQuotes p{
+	visibility:hidden;
+}
 
+input{
+	color:black;
+}
 
 textarea{
 	width: 100%;
