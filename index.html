@@ -6,25 +6,21 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="css/bootstrap.css"/>
 		<link rel="stylesheet" href="style.css">
-		<script type='text/javascript' src='scripts/gen_validatorv31.js'>
-// <![CDATA[
- 
-		    var frmvalidator  = new Validator("contactus");
-		    frmvalidator.EnableOnPageErrorDisplay();
-		    frmvalidator.EnableMsgsTogether();
-		    frmvalidator.addValidation("name","req","Please provide your name");
- 
-		    frmvalidator.addValidation("email","req",
-                "Please provide your email address");
- 
-		    frmvalidator.addValidation("email","email",
-                "Please provide a valid email address");
- 
-    		frmvalidator.addValidation("message","maxlen=2048",
-                "The message is too long!(more than 2KB!)");
- 
-// ]]>
-</script>
+		<script type="text/javascript">
+			function show(pic){
+				hide();
+				pId=pic.id.split("Pic")[0];
+				document.getElementById(pId).style.visibility="visible";
+				document.getElementById("hiddenQuotes").insertBefore(document.getElementById(pId),document.getElementById("hiddenQuotes").firstElementChild);
+			}
+
+			function hide(){
+				childs = document.getElementById("hiddenQuotes").children;
+				for (var i = 0; i < childs.length; i++) {
+					childs[i].style.visibility="hidden";
+				};
+			}
+		</script>
 	</head>
 	<body data-spy="scroll" data-target="#nav">
 		<nav class = "navbar navbar-default navbar-fixed-top" id ="nav">
@@ -78,6 +74,7 @@
 				<span class="question">How do you get to safety?</span>
 				<br><br>
 			</article>
+			<hr>
 			<article>
 				<h3>RESOURCES</h3>
 				<p>You made it out alive, but do you have everything you need? Water, food, extra clothing, toiletries, emergency cash? Probably not, meaning you'll need to purchase them. Without cash, your only solution is to access your funds from your bank. But at this time, banks are most likely crowded by others in the same situation as you. There's no way you can get the supplies you need in time.</p>
@@ -88,28 +85,35 @@
 				<p>Too many questions, not enough time. You've only got a few seconds during an earthquake.</p><span class="question">What do you do?</span>
 			</article>
 		</section>
-		
+
 		<section>
 			<span id ="features" class="anchor">span</span>
-			<div class ="page-header"><h2>QuakeX <small>Significant Features</small></h2></div>
-			<h3>There are so many things that you need to keep track of, why not use QuakeX?</h3>
-			<article class="container-fluid">
-				<div class= "row">
-					<img src="blank.png" class = "col-md-4 img-responsive phoneshots">
-					<p class = "col-md-8"><h3>Alerts</h3> Get alerts a few seconds before the earthquake hits. Using the USGS alert, we can deliver warnings right to your phone. These messages will also provide advice to ensure immediate safety during the earthquake<br>
-					</p>
-					
+			<div class ="page-header"><h2>QuakeX's <small>Significant Features</small></h2></div>
+			<p>Designed to focus on your priorities and your needs, QuakeX provides a comprehensive overview of what you should be doing before, during, and after an earthquake. Not the population of humans on earth, just you. See how by clicking on the various components.</p><br>
+			<article>
+				<div class = "row">
+					<img src="blankScreen.jpg" class = "col-md-3 img-responsive phoneshots" id = "startPagePic" onclick="show(this)">
+					<img src="blankScreen.jpg" class = "col-md-3 img-responsive phoneshots" id="taskListPic"onclick="show(this)">
+					<img src="blankScreen.jpg" class = "col-md-3 img-responsive phoneshots" id="UberPic" onclick="show(this)">
+					<img src="blankScreen.jpg" class = "col-md-3 img-responsive phoneshots" id="ATMPic" onclick="show(this)">
+				</div>
+				<div id = "hiddenQuotes">
+					<p id ="startPage">Front Page: Lorem ipsum dolor sit amet, vel id diceret nostrum, ullum constituam ius ei, duo maiorum democritum ad. Per viris nonumes platonem ea, his eros audire oportere te. Te timeam reprehendunt vim, ut duo animal dissentias repudiandae, regione hendrerit repudiandae sed ei. Mei veri veritus qualisque te, eos accusata rationibus an. Legendos mediocrem sit ad.
+
+Per debitis persequeris id, has movet nonumy consequuntur ut, purto volumus vis eu. Eam te erat summo senserit. Elaboraret necessitatibus vel in, vim ut iudico minimum. Ceteros dissentiunt philosophia et sea, odio scripta invidunt an his.</p>
+					<p id ="taskList">Tasks: Lorem ipsum dolor sit amet, vel id diceret nostrum, ullum constituam ius ei, duo maiorum democritum ad. Per viris nonumes platonem ea, his eros audire oportere te. Te timeam reprehendunt vim, ut duo animal dissentias repudiandae, regione hendrerit repudiandae sed ei. Mei veri veritus qualisque te, eos accusata rationibus an. Legendos mediocrem sit ad.
+
+Per debitis persequeris id, has movet nonumy consequuntur ut, purto volumus vis eu. Eam te erat summo senserit. Elaboraret necessitatibus vel in, vim ut iudico minimum. Ceteros dissentiunt philosophia et sea, odio scripta invidunt an his.</p>
+					<p id ="Uber">Easy Uber: Lorem ipsum dolor sit amet, vel id diceret nostrum, ullum constituam ius ei, duo maiorum democritum ad. Per viris nonumes platonem ea, his eros audire oportere te. Te timeam reprehendunt vim, ut duo animal dissentias repudiandae, regione hendrerit repudiandae sed ei. Mei veri veritus qualisque te, eos accusata rationibus an. Legendos mediocrem sit ad.
+
+Per debitis persequeris id, has movet nonumy consequuntur ut, purto volumus vis eu. Eam te erat summo senserit. Elaboraret necessitatibus vel in, vim ut iudico minimum. Ceteros dissentiunt philosophia et sea, odio scripta invidunt an his.</p>
+					<p id ="ATM">Finding ATMs: Lorem ipsum dolor sit amet, vel id diceret nostrum, ullum constituam ius ei, duo maiorum democritum ad. Per viris nonumes platonem ea, his eros audire oportere te. Te timeam reprehendunt vim, ut duo animal dissentias repudiandae, regione hendrerit repudiandae sed ei. Mei veri veritus qualisque te, eos accusata rationibus an. Legendos mediocrem sit ad.
+
+Per debitis persequeris id, has movet nonumy consequuntur ut, purto volumus vis eu. Eam te erat summo senserit. Elaboraret necessitatibus vel in, vim ut iudico minimum. Ceteros dissentiunt philosophia et sea, odio scripta invidunt an his.</p>
 				</div>
 			</article>
-			<hr>
-			<article class="container-fluid">
-				<div class= "row">
-					<img src="blank.png" class = "col-md-4 img-responsive phoneshots">
-					<p class = "col-md-8"><h3>Customization</h3> Let QuakeX provide suggestions before, during, and after the event that are actually relevant to you. When the time comes, you want someone there that understands your priorities and can help you check off that list.</p>
-				</div>
-			</article>
-		</section>
-		
+
+		</section>		
 		<section class = "jumbotron" id = "end">
 			<span id ="download" class="anchor">span</span><br><br>
 			<div class= "container" id = "weee">
@@ -117,7 +121,6 @@
 				<h3>Plan, Prioritize, Proceed</h3>
 				<p><a class="btn btn-primary btn-lg" href="#" role="button">Let us save your world!</a></p>
 			</div>
-			
 		</section>
 		<section >
 			<span id ="contact" class="anchor">span</span>
